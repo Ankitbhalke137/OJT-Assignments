@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let count = 0;
+        function increment() {
+            count++;
+            document.getElementById("count").innerHTML = count;
+        }
+        function decrement() {
+            count--;
+            document.getElementById("count").innerHTML = count;
+        }
+        function reset() {
+            count = 0;
+            document.getElementById("count").innerHTML = count;
+        }   
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background: #833AB4;
+            background: radial-gradient(circle, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 74%, rgba(252, 176, 69, 1) 100%);
+            color: black;
+        }
+
+        p {
+            background-color: antiquewhite;
+            font-size: 20px;
+            border-radius: 90px;
+            padding: 10px 10px;
+            width: 20%;
+            margin: 0 auto;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 20px;
+            border-radius: 90px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Click Counter App</h1>
+    <div>
+        <p><b>Count: <span id="count">0</span></b></p>
+    </div>
+    <button onclick="increment()">Increment</button>
+    <button onclick="decrement()">Decrement</button>
+    <button onclick="reset()">Reset</button>
+</body>
+
+</html>
