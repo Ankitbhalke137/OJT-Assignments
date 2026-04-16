@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Digital Clock</title>
+    <style>
+        body {
+            background-color: #0f0f0f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #clock {
+            color: #00ff41;
+            /* Classic Matrix/Terminal Green */
+            font-size: 5rem;
+            background: #1a1a1a;
+            padding: 20px 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+            border: 2px solid #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="clock">00:00:00</div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+
+            // Extract hours, minutes, and seconds
+            let h = now.getHours();
+            let m = now.getMinutes();
+            let s = now.getSeconds();
+
+            let amPm = h >= 12 ? 'PM' : 'AM';
+
+            h = h % 12 || 12;
+
+            // Format to HH:MM:SS (ensures 2 digits)
+            h = String(h).padStart(2, '0');
+            m = String(m).padStart(2, '0');
+            s = String(s).padStart(2, '0');
+            amPm = String(amPm).padStart(2, '0');
+
+            // Update the UI
+            document.getElementById('clock').textContent = `${h}:${m}:${s} ${amPm}`;
+        }
+
+        // Run the function immediately so the clock doesn't start at 00:00:00
+        updateClock();
+
+        // Update every 1 second (1000 milliseconds)
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+
+</html>

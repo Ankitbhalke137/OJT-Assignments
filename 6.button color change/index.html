@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Color Changer</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: sans-serif;
+        }
+
+        #colorButton {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            background-color: #333;
+            /* Initial Color */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #colorButton:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="colorButton">Click to Change My Color!</button>
+
+    <script>
+        const btn = document.getElementById('colorButton');
+
+        // 1. Define our color palette
+        const colors = ['#FF5733', '#33FF57', '#3357FF', '#F333FF', '#FFD700'];
+        let currentIndex = 0;
+
+        btn.addEventListener('click', () => {
+            // 2. Change the background color
+            btn.style.backgroundColor = colors[currentIndex];
+
+            // 3. Update the index for the next click
+            // Using modulo ensures that when we hit 5, it resets to 0 (5 % 5 = 0)
+            currentIndex = (currentIndex + 1) % colors.length;
+
+            // Optional: Update text to show current color hex
+            btn.textContent = `Current Color: ${colors[currentIndex]}`;
+        });
+    </script>
+</body>
+
+</html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +14,7 @@
             height: 100vh;
             margin: 0;
             font-family: sans-serif;
-            transition: background-color 0.3s ease; 
+            transition: background-color 0.3s ease;
         }
 
         .container {
@@ -21,7 +22,7 @@
             padding: 2rem;
             border-radius: 12px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         #hex-display {
@@ -41,9 +42,12 @@
             border-radius: 6px;
         }
 
-        .btn:active { transform: scale(0.98); }
+        .btn:active {
+            transform: scale(0.98);
+        }
     </style>
 </head>
+
 <body>
 
     <div class="container">
@@ -63,11 +67,12 @@
 
         btn.addEventListener('click', () => {
             const newColor = generateRandomColor();
-            
+
             // Update DOM
             document.body.style.backgroundColor = newColor;
             hexText.textContent = newColor.toUpperCase();
         });
     </script>
 </body>
+
 </html>
