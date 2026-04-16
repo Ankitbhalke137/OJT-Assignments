@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Greeting</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        #greeting-card {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem 4rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="greeting-card">
+        <h1 id="greeting">Hello!</h1>
+    </div>
+
+    <script>
+        function setGreeting() {
+            const now = new Date();
+            const hour = now.getHours();
+            const display = document.getElementById('greeting');
+            let message = "";
+
+            // 1. Logic for time ranges
+            if (hour >= 5 && hour < 12) {
+                message = "☀️ Good Morning!";
+            } else if (hour >= 12 && hour < 18) {
+                message = "🌤️ Good Afternoon!";
+            } else if (hour >= 18 && hour < 22) {
+                message = "🌙 Good Evening!";
+            } else {
+                message = "💤 Good Night!";
+            }
+
+            // 2. Update the UI
+            display.textContent = message;
+        }
+
+        // Run immediately
+        setGreeting();
+    </script>
+</body>
+
+</html>

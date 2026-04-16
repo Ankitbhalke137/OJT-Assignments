@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Size Adjuster</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f9f9f9;
+        }
+
+        #text-box {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 600px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 10px;
+            line-height: 1.5;
+        }
+
+        .controls button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+            transition: background 0.2s;
+        }
+
+        .controls button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        #size-indicator {
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="controls">
+        <button id="decrease">A-</button>
+        <span id="size-indicator">16px</span>
+        <button id="increase">A+</button>
+    </div>
+
+    <p id="text-box">
+        The quick brown fox jumps over the lazy dog. This text can be adjusted 
+        to be as large as 32px or as small as 12px. Try clicking the buttons above!
+    </p>
+
+    <script>
+        const text = document.getElementById('text-box');
+        const display = document.getElementById('size-indicator');
+        const btnIncr = document.getElementById('increase');
+        const btnDecr = document.getElementById('decrease');
+
+        // Initial State & Constraints
+        let currentSize = 16;
+        const maxSize = 32;
+        const minSize = 12;
+
+        function updateUI() {
+            // Update the text font size
+            text.style.fontSize = currentSize + 'px';
+            
+            // Update the text in the indicator
+            display.textContent = currentSize + 'px';
+
+            // Disable buttons if limits are reached (Visual feedback)
+            btnIncr.disabled = (currentSize >= maxSize);
+            btnDecr.disabled = (currentSize <= minSize);
+        }
+
+        btnIncr.addEventListener('click', () => {
+            if (currentSize < maxSize) {
+                currentSize += 2;
+                updateUI();
+            }
+        });
+
+        btnDecr.addEventListener('click', () => {
+            if (currentSize > minSize) {
+                currentSize -= 2;
+                updateUI();
+            }
+        });
+    </script>
+</body>
+</html>

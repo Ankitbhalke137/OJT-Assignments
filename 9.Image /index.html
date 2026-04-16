@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Image Toggle</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            padding-top: 50px;
+            background-color: #f4f4f9;
+        }
+
+        /* The magic class */
+        .hidden {
+            display: none;
+        }
+
+        img {
+            width: 300px;
+            border-radius: 10px;
+            margin-top: 20px;
+            transition: opacity 0.3s ease;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="toggleBtn">Hide Image</button>
+    <br>
+    <img id="myImage" src="image.jpeg" alt="Toggleable Workspace">
+
+    <script>
+        const btn = document.getElementById('toggleBtn');
+        const img = document.getElementById('myImage');
+
+        btn.addEventListener('click', () => {
+            // 1. Toggle the 'hidden' class
+            img.classList.toggle('hidden');
+
+            // 2. Update button text based on image visibility
+            if (img.classList.contains('hidden')) {
+                btn.textContent = 'Show Image';
+            } else {
+                btn.textContent = 'Hide Image';
+            }
+        });
+    </script>
+</body>
+
+</html>
