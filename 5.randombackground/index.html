@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Background Generator</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: sans-serif;
+            transition: background-color 0.3s ease; 
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        #hex-display {
+            font-family: monospace;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            font-size: 1rem;
+            cursor: pointer;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 6px;
+        }
+
+        .btn:active { transform: scale(0.98); }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <span id="hex-display">#FFFFFF</span>
+        <button class="btn" id="color-btn">Change Background</button>
+    </div>
+
+    <script>
+        const btn = document.getElementById('color-btn');
+        const hexText = document.getElementById('hex-display');
+
+        const generateRandomColor = () => {
+            // Generate a random number, convert to hex, and pad if it's too short
+            const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+            return `#${randomColor.padStart(6, '0')}`;
+        };
+
+        btn.addEventListener('click', () => {
+            const newColor = generateRandomColor();
+            
+            // Update DOM
+            document.body.style.backgroundColor = newColor;
+            hexText.textContent = newColor.toUpperCase();
+        });
+    </script>
+</body>
+</html>

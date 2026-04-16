@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day and Night Toggle</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            transition: 0.3s;
+        }
+
+        .night-mode {
+            background-color: black;
+            color: white;
+        }
+    </style>
+    <script>
+        function toggleDayNight() {
+            document.body.classList.toggle("night-mode");
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Theme Toggle Example</h1>
+    <button onclick="toggleDayNight()">Toggle Day/Night</button>
+</body>
+
+</html>

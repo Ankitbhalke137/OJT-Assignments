@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert System</title>
+    <style>
+        .btn {
+            padding: 10px 20px;
+            cursor: pointer;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            margin: 5px;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+        .success {
+            background-color: #28a745;
+        }
+
+        .warning {
+            background-color: #ffc107;
+            color: black;
+        }
+
+        .error {
+            background-color: #dc3545;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="button-container">
+        <button class="btn success" data-message="Success! Everything went smoothly.">Success</button>
+        <button class="btn warning" data-message="Warning! Please check your input.">Warning</button>
+        <button class="btn error" data-message="Error! Something went wrong.">Error</button>
+    </div>
+
+    <script>
+        const container = document.getElementById('button-container');
+
+        container.addEventListener('click', (event) => {
+            // Check if the clicked element is a button
+            if (event.target.tagName === 'BUTTON') {
+                const message = event.target.getAttribute('data-message');
+                alert(message);
+            }
+        });
+    </script>
+</body>
+
+</html>
