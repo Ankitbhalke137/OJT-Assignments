@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Validation</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f4f7f6; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .form-card { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 350px; }
+        h2 { text-align: center; color: #333; }
+        .input-group { margin-bottom: 1.2rem; }
+        label { display: block; margin-bottom: 5px; font-weight: 600; color: #555; }
+        input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+        .error-msg { color: #dc3545; font-size: 0.85rem; margin-top: 5px; min-height: 1.2em; }
+        button { width: 100%; padding: 12px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1rem; font-weight: bold; }
+        button:hover { background: #218838; }
+        .success { color: #28a745; text-align: center; margin-top: 10px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="form-card">
+    <h2>Login</h2>
+    <form id="loginForm">
+        <div class="input-group">
+            <label>Username</label>
+            <input type="text" id="username" placeholder="Min 3 characters">
+            <div id="userError" class="error-msg"></div>
+        </div>
+        
+        <div class="input-group">
+            <label>Email</label>
+            <input type="email" id="email" placeholder="example@domain.com">
+            <div id="emailError" class="error-msg"></div>
+        </div>
+
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Min 6 characters">
+            <div id="passError" class="error-msg"></div>
+        </div>
+
+        <button type="submit">Submit</button>
+        <div id="formSuccess" class="success"></div>
+    </form>
+</div>
+
+<script>
+    const form = document.getElementById('loginForm');
+
+    form.addEventListener('submit', (e) => {
+        // 1. Prevent the actual submission/refresh
+        e.preventDefault();
+
+        // Clear previous messages
+        document.querySelectorAll('.error-msg').forEach(el => el.textContent = '');
+        document.getElementById('formSuccess').textContent = '';
+
+        const user = document.getElementById('username').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const pass = document.getElementById('password').value;
+
+        let isValid = true;
+
+        // 2. Validation Logic
+        if (user.length < 3) {
+            document.getElementById('userError').textContent = "Username must be at least 3 characters.";
+            isValid = false;
+        }
+
+        if (!email.includes('@') || !email.includes('.')) {
+            document.getElementById('emailError').textContent = "Please enter a valid email address.";
+            isValid = false;
+        }
+
+        if (pass.length < 6) {
+            document.getElementById('passError').textContent = "Password must be at least 6 characters.";
+            isValid = false;
+        }
+
+        // 3. Final Check
+        if (isValid) {
+            document.getElementById('formSuccess').textContent = "✅ Form submitted successfully!";
+            // In a real app, you would now send data to a server using fetch()
+            console.log("Data ready to send:", { user, email, pass });
+        }
+    });
+</script>
+
+</body>
+</html>
