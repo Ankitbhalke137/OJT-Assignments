@@ -1,0 +1,16 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: #1a1a2e; color: #fff; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+.container { background: #16213e; padding: 40px; border-radius: 12px; width: 400px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+h1 { text-align: center; margin-bottom: 20px; color: #e94560; }
+.input-group { margin-bottom: 20px; }
+label { display: block; margin-bottom: 8px; }
+input { width: 100%; padding: 12px; border: 2px solid #0f3460; border-radius: 8px; background: #1a1a2e; color: #fff; font-size: 16px; outline: none; }
+input:focus { border-color: #e94560; }
+.strength-bar { width: 100%; height: 10px; background: #0f3460; border-radius: 5px; overflow: hidden; margin-bottom: 10px; }
+.strength-fill { height: 100%; width: 0; transition: width 0.3s, background 0.3s; border-radius: 5px; }
+.strength-text { text-align: center; font-weight: bold; margin-bottom: 15px; }
+.criteria { list-style: none; }
+.criteria li { padding: 5px 0; padding-left: 25px; position: relative; color: #888; }
+.criteria li::before { content: '✗'; position: absolute; left: 0; color: #e94560; }
+.criteria li.valid { color: #4ecca3; }
+.criteria li.valid::before { content: '✓'; color: #4ecca3; }

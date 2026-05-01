@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag & Drop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Drag & Drop Elements</h1>
+        <div class="board">
+            <div class="column" id="todo" ondragover="allowDrop(event)" ondrop="drop(event)">
+                <h3>To Do</h3>
+                <div class="card" draggable="true" ondragstart="drag(event)" id="card1">Task 1</div>
+                <div class="card" draggable="true" ondragstart="drag(event)" id="card2">Task 2</div>
+                <div class="card" draggable="true" ondragstart="drag(event)" id="card3">Task 3</div>
+            </div>
+            <div class="column" id="in-progress" ondragover="allowDrop(event)" ondrop="drop(event)">
+                <h3>In Progress</h3>
+            </div>
+            <div class="column" id="done" ondragover="allowDrop(event)" ondrop="drop(event)">
+                <h3>Done</h3>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Courier New', Courier, monospace; background: #282c34; color: #61dafb; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+.container { text-align: center; }
+h1 { margin-bottom: 30px; font-size: 2.5em; color: #fff; }
+.key-box { background: #1c2025; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: inline-block; min-width: 150px; margin-bottom: 30px; border: 2px solid #61dafb; }
+#keyDisplay { font-size: 5em; font-weight: bold; }
+p { font-size: 1.5em; color: #abb2bf; }
+#keyCodeDisplay { color: #98c379; font-weight: bold; }

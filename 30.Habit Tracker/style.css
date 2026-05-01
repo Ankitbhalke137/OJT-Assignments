@@ -1,0 +1,16 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; background: #e0f7fa; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+.container { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); width: 450px; }
+h1 { color: #00838f; text-align: center; margin-bottom: 25px; }
+.input-area { display: flex; gap: 10px; margin-bottom: 25px; }
+input { flex: 1; padding: 12px; border: 2px solid #b2ebf2; border-radius: 8px; font-size: 16px; outline: none; }
+input:focus { border-color: #00bcd4; }
+button { padding: 12px 20px; background: #00bcd4; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 16px; transition: 0.3s; }
+button:hover { background: #0097a7; }
+ul { list-style: none; }
+li { display: flex; justify-content: space-between; align-items: center; background: #f8fdfe; padding: 15px; border-radius: 8px; margin-bottom: 10px; border-left: 5px solid #00bcd4; transition: 0.3s; }
+.habit-name { font-size: 16px; color: #333; flex: 1; }
+.actions { display: flex; gap: 10px; align-items: center; }
+.check-btn { background: #e0e0e0; color: #555; padding: 8px 12px; border-radius: 50%; font-size: 14px; cursor: pointer; }
+.check-btn.completed { background: #4caf50; color: white; }
+li.completed-bg { background: #e8f5e9; border-left-color: #4caf50; }

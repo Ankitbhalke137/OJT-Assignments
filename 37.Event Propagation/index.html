@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Propagation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Event Propagation (Bubbling)</h1>
+        <div class="box outer" id="outer">
+            Outer Box
+            <div class="box inner" id="inner">
+                Inner Box
+                <button id="btn">Click Me!</button>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="clearBtn">Clear Log</button>
+            <label><input type="checkbox" id="stopProp"> Stop Propagation on Inner Box</label>
+        </div>
+        
+        <h2>Event Log:</h2>
+        <ul id="log" class="log"></ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

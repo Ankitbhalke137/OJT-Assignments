@@ -1,0 +1,10 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Arial', sans-serif; background: #f4f4f9; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+.container { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 600px; text-align: center; }
+h1 { color: #333; margin-bottom: 20px; }
+.quote { font-size: 20px; margin-bottom: 20px; padding: 20px; background: #eef2f5; border-radius: 8px; color: #555; user-select: none; }
+textarea { width: 100%; height: 120px; padding: 15px; font-size: 18px; border: 2px solid #ccc; border-radius: 8px; resize: none; margin-bottom: 20px; outline: none; transition: 0.3s; }
+textarea:focus { border-color: #3498db; }
+.stats { display: flex; justify-content: space-around; margin-bottom: 20px; font-size: 18px; font-weight: bold; color: #2c3e50; }
+button { padding: 12px 30px; background: #3498db; color: white; border: none; border-radius: 8px; font-size: 18px; cursor: pointer; transition: 0.3s; font-weight: bold; }
+button:hover { background: #2980b9; }

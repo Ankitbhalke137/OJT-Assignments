@@ -1,0 +1,9 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: #e0e5ec; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+.container { background: #e0e5ec; padding: 40px; border-radius: 15px; box-shadow: 9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px rgba(255,255,255, 0.5); text-align: center; width: 350px; }
+h1 { color: #333; margin-bottom: 25px; }
+.input-box { display: flex; flex-direction: column; gap: 15px; }
+input[type="date"] { padding: 12px; border: none; border-radius: 8px; background: #e0e5ec; box-shadow: inset 6px 6px 10px 0 rgba(163,177,198,0.5), inset -6px -6px 10px 0 rgba(255,255,255,0.8); outline: none; }
+button { padding: 12px; border: none; border-radius: 8px; background: #e0e5ec; box-shadow: 6px 6px 10px 0 rgba(163,177,198,0.5), -6px -6px 10px 0 rgba(255,255,255,0.8); color: #333; font-weight: bold; cursor: pointer; transition: 0.2s; }
+button:active { box-shadow: inset 6px 6px 10px 0 rgba(163,177,198,0.5), inset -6px -6px 10px 0 rgba(255,255,255,0.8); }
+#result { margin-top: 20px; font-size: 18px; font-weight: bold; color: #2c3e50; }
