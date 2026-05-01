@@ -8,7 +8,7 @@ let currentIndex = 0;
 function showSlide(index) {
     slides.forEach(slide => slide.classList.remove('active'));
     dots.forEach(dot => dot.classList.remove('active'));
-    
+
     if (index < 0) {
         currentIndex = slides.length - 1;
     } else if (index >= slides.length) {
@@ -16,7 +16,7 @@ function showSlide(index) {
     } else {
         currentIndex = index;
     }
-    
+
     slides[currentIndex].classList.add('active');
     dots[currentIndex].classList.add('active');
 }
@@ -30,7 +30,7 @@ nextBtn.addEventListener('click', () => {
 });
 
 dots.forEach(dot => {
-    dot.addEventListener('click', function() {
+    dot.addEventListener('click', function () {
         const index = parseInt(this.getAttribute('data-index'));
         showSlide(index);
     });
